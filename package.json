@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/aabishafi/project-8/issues"
   },
-  "homepage": "https://github.com/aabishafi/project-8#readme"
+  "homepage": "https://github.com/aabishafi/project-8#readme",
+  "devDependencies": {},
+  "dependencies": {
+    "express": "^4.17.1",
+    "pug": "^3.0.0",
+    "sequelize": "^6.3.4",
+    "sqlite3": "^5.0.0"
+  }
 }
