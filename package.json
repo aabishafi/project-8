@@ -1,0 +1,19 @@
+{
+  "name": "sql-library-manager",
+  "version": "1.0.0",
+  "description": "sql library manager",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aabishafi/project-8.git"
+  },
+  "author": "mohamed adam",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aabishafi/project-8/issues"
+  },
+  "homepage": "https://github.com/aabishafi/project-8#readme"
+}
