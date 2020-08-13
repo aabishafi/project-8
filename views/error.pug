@@ -1,0 +1,10 @@
+extends layout.pug
+
+block content
+
+    if errors
+        h2.error Opps!
+            ul.error
+                each error in errors
+                    li
+                        = error.message

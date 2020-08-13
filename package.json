@@ -2,7 +2,7 @@
     "name": "sql-library-manager",
     "version": "1.0.0",
     "description": "sql library manager",
-    "main": "index.js",
+    "main": "app.js",
     "scripts": {
         "start": "node app.js"
     },

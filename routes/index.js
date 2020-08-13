@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-/* GET home page. */
+// Homepage will redirects to book directory
 router.get('/', (req, res) => {
     res.redirect('/books');
 });
