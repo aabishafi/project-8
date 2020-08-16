@@ -32,7 +32,13 @@ app.use((req, res, next) => {
 
 app.use((err, req, res, next) => {
     console.log(err + '')
-    res.render('page-not-found');
+
+    if (err.status === 404) {
+        res.render('page-not-found');
+    } else {
+        err.status = 500;
+        res.render('book-not-found');
+    }
 })
 
 sequelize.sync().then(function() {

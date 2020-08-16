@@ -4,12 +4,14 @@ var Book = require("../models").Book;
 
 // Get book listing
 router.get('/', function(req, res, next) {
-    Book.findAll({ order: [
+    Book.findAll({
+        order: [
             ["title", "ASC"]
-        ] }).then(function(books) {
+        ]
+    }).then(function(books) {
         res.render("index", { books: books, title: "My Awesome Books" })
     }).catch(function(err) {
-        res.sendStatus(500);
+        res.render(500, err);
     });
 });
 
@@ -32,8 +34,8 @@ router.post("/new", function(req, res, next) {
             throw err;
         }
     }).catch(function(err) {
-        res.render('error', err);
-        res.sendStatus(500);
+        res.render(500, err);
+
     });
 });
 
@@ -43,7 +45,7 @@ router.get("/:id", function(req, res, next) {
         if (books) {
             res.render("update-book", { books: books, title: books.title })
         } else {
-            next();
+            res.render('book-not-found');
         }
     });
 });
@@ -54,7 +56,7 @@ router.post("/:id", function(req, res, next) {
         if (books) {
             return books.update(req.body);
         } else {
-            next();
+            res.render('book-not-found');
         }
     }).then(function(books) {
         res.redirect("/");
@@ -70,7 +72,7 @@ router.post("/:id", function(req, res, next) {
             throw err;
         }
     }).catch(function(err) {
-        res.sendStatus(500);
+        res.render(500, err);
     });
 });
 
@@ -80,12 +82,12 @@ router.post("/:id/delete", function(req, res, next) {
         if (book) {
             return book.destroy();
         } else {
-            next();
+            res.render('book-not-found');
         }
     }).then(function() {
         res.redirect("/");
     }).catch(function(err) {
-        res.sendStatus(500);
+        res.render(500, err);
     });
 });
 
