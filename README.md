@@ -6,6 +6,6 @@ You'll be required to implement a dynamic website using JavaScript, Node.js, Exp
 
 How to Install:
 
-Run npm install at the root folder
-Run npm start
-Visit localhost:3000/
+1.Run npm install at the root folder
+2.Run npm start
+3.Visit localhost:3000/
